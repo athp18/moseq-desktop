@@ -12,8 +12,8 @@
   background: #161616;
   border: 1px solid #2a2a2a;
   border-radius: 10px;
-  width: 860px;
-  max-width: 95vw;
+  width: 1060px;
+  max-width: 96vw;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -50,20 +50,41 @@
   overflow: hidden;
 }
 
-/* Preview pane */
+/* Preview pane — two panels side by side */
 .preview {
   flex: 1;
   background: #0a0a0a;
   display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   min-height: 320px;
+  overflow: hidden;
+}
+
+.imagePanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-right: 1px solid #1a1a1a;
+  min-width: 0;
+}
+.imagePanel:last-child { border-right: none; }
+
+.imageLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #555;
+  margin-bottom: 6px;
+  align-self: flex-start;
 }
 
 .previewImage {
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(100% - 24px);
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -78,7 +99,7 @@
 .previewOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;

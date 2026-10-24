@@ -1,3 +1,16 @@
+/* Session summary */
+.summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.summaryTotal   { color: #888; }
+.summaryDone    { color: #4ade80; }
+.summaryPending { color: #fbbf24; }
+.summaryMissing { color: #f87171; }
+
 .sessionTable {
   border: 1px solid #2a2a2a;
   border-radius: 6px;
@@ -59,3 +72,61 @@
 }
 .roiBtn:hover:not(:disabled) { border-color: #60a5fa; color: #60a5fa; }
 .roiBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Global extraction config */
+.configSection {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 7px;
+}
+
+.configTitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.configGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.configField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.configLabel {
+  font-size: 11px;
+  color: #888;
+}
+
+.configInput {
+  background: #0d0d0d;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #e5e5e5;
+  font-size: 13px;
+  padding: 6px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.configInput:focus { outline: none; border-color: #60a5fa; }
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #aaa;
+  cursor: pointer;
+}
