@@ -1,0 +1,60 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 8px;
+  width: 180px;
+  min-width: 180px;
+  border-right: 1px solid #2a2a2a;
+  background: #111;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.step:hover:not(:disabled) {
+  background: #1e1e1e;
+  color: #ccc;
+}
+
+.step.active {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.step.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.index {
+  font-size: 10px;
+  color: #555;
+  min-width: 14px;
+}
+
+.icon {
+  font-size: 12px;
+  min-width: 14px;
+}
+
+.label {
+  font-weight: 500;
+}
+
+.complete .icon { color: #4ade80; }
+.running .icon  { color: #60a5fa; }
+.error .icon    { color: #f87171; }
+.incomplete .icon { color: #fbbf24; }

@@ -1,0 +1,155 @@
+.description {
+  color: #888;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #e5e5e5;
+  font-size: 13px;
+  padding: 6px 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #60a5fa;
+}
+
+.select {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #e5e5e5;
+  font-size: 13px;
+  padding: 6px 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Scan results */
+
+.scanMeta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.scanMeta strong {
+  color: #e5e5e5;
+}
+
+.kappaPlot {
+  height: 280px;
+  margin-bottom: 20px;
+}
+
+.selectionRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.kappaInfo {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.kappaLabel {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kappaValue {
+  font-size: 22px;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.kappaStat {
+  font-size: 12px;
+  color: #888;
+  background: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.finalConfig {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rescanBtn {
+  margin-left: auto;
+  padding: 5px 14px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.rescanBtn:hover {
+  color: #e5e5e5;
+  border-color: #666;
+}
+
+/* Done state */
+
+.doneBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #111;
+  border: 1px solid #1e3a1e;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.doneIcon {
+  font-size: 22px;
+  color: #4ade80;
+}
+
+.doneBox p {
+  flex: 1;
+  margin: 0;
+  color: #aaa;
+  font-size: 14px;
+}

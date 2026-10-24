@@ -1,0 +1,28 @@
+.container {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  margin-top: 16px;
+}
+
+.log {
+  margin: 0;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #ccc;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.cursor {
+  color: #60a5fa;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
