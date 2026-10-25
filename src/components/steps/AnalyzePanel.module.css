@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 900px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.groupsLabel {
+  font-size: 12px;
+  color: #666;
+  font-family: 'SF Mono', monospace;
+}
+
+.recomputeBtn {
+  padding: 5px 14px;
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.recomputeBtn:hover { color: #e5e5e5; border-color: #666; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 0;
+}
+
+.tab {
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+.tab:hover { color: #aaa; }
+
+.tabActive {
+  color: #e5e5e5;
+  border-bottom-color: #60a5fa;
+}
+
+.tabContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.tabControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.controlLabel {
+  font-size: 12px;
+  color: #888;
+}
+
+.controlInput {
+  width: 72px;
+  padding: 5px 8px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #e5e5e5;
+  font-size: 13px;
+}
+.controlInput:focus { outline: none; border-color: #60a5fa; }
+
+.controlSelect {
+  padding: 5px 8px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #e5e5e5;
+  font-size: 13px;
+}
+.controlSelect:focus { outline: none; border-color: #60a5fa; }
+
+.plot {
+  flex: 1;
+  min-height: 340px;
+}

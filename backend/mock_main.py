@@ -335,6 +335,76 @@ def get_session_config(base_dir: str):
     }
 
 
+# Analysis
+@app.get("/analyze/status")
+def analyze_status(base_dir: str):
+    return {
+        "moseq_df": True,
+        "stats_df": True,
+        "groups": ["saline", "amphetamine"],
+    }
+
+
+@app.get("/analyze/syllable_usage")
+def syllable_usage(base_dir: str, n_syllables: int = 20):
+    import random
+    rng = random.Random(42)
+    syls = list(range(n_syllables))
+    saline_base    = [max(0.001, 0.08 * math.exp(-0.12 * i) + rng.gauss(0, 0.005)) for i in syls]
+    amphet_base    = [max(0.001, 0.07 * math.exp(-0.10 * i) + rng.gauss(0, 0.005)) for i in syls]
+    def _normalize(v):
+        s = sum(v); return [x / s for x in v]
+    return {
+        "syllables": syls,
+        "groups": {
+            "saline":      _normalize(saline_base),
+            "amphetamine": _normalize(amphet_base),
+        },
+    }
+
+
+@app.get("/analyze/scalars")
+def scalar_summary(base_dir: str):
+    return {
+        "scalars": ["velocity_2d_mm", "height_ave_mm", "width_mm", "length_mm", "area_mm"],
+        "groups": {
+            "saline": {
+                "velocity_2d_mm": {"mean": 44.2,  "sem": 2.1},
+                "height_ave_mm":  {"mean": 28.3,  "sem": 0.9},
+                "width_mm":       {"mean": 55.1,  "sem": 1.4},
+                "length_mm":      {"mean": 82.4,  "sem": 2.3},
+                "area_mm":        {"mean": 3420.0, "sem": 95.0},
+            },
+            "amphetamine": {
+                "velocity_2d_mm": {"mean": 63.8,  "sem": 3.4},
+                "height_ave_mm":  {"mean": 29.1,  "sem": 1.1},
+                "width_mm":       {"mean": 53.7,  "sem": 1.6},
+                "length_mm":      {"mean": 80.9,  "sem": 2.8},
+                "area_mm":        {"mean": 3380.0, "sem": 102.0},
+            },
+        },
+    }
+
+
+@app.get("/analyze/transitions")
+def transition_matrix(base_dir: str, n_syllables: int = 20):
+    import random
+    rng = random.Random(7)
+    def _rand_trans(n):
+        mat = [[max(0, rng.gauss(0.03, 0.025)) for _ in range(n)] for _ in range(n)]
+        for i in range(n):
+            s = sum(mat[i]) or 1
+            mat[i] = [v / s for v in mat[i]]
+        return mat
+    return {
+        "n_syllables": n_syllables,
+        "groups": {
+            "saline":      _rand_trans(n_syllables),
+            "amphetamine": _rand_trans(n_syllables),
+        },
+    }
+
+
 # PCA
 @app.get("/pca/scree")
 def scree(base_dir: str):

@@ -9,6 +9,7 @@ from api.roi import router as roi_router
 from api.sessions import router as sessions_router
 from api.pca import router as pca_router
 from api.model import router as model_router
+from api.analyze import router as analyze_router
 
 app = FastAPI(title="MoSeq Desktop Backend")
 
@@ -25,6 +26,7 @@ app.include_router(roi_router, prefix="/roi")
 app.include_router(sessions_router, prefix="/sessions")
 app.include_router(pca_router, prefix="/pca")
 app.include_router(model_router, prefix="/model")
+app.include_router(analyze_router, prefix="/analyze")
 
 
 @app.get("/health")
